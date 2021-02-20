@@ -25,7 +25,7 @@ SECRET_KEY = 'eeui@+hkszkt#r_pc9bb002ce-wz9k6qi4g1(wedwl(#y&k2tc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-app-learning.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'prediction',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'mainapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'predictionsql',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -121,10 +126,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-#########################################
-    ##  IMPORT LOCAL SETTINGS ##
-#########################################
-try:
-    from .local_settings import *
-except ImportError:
-    pass
