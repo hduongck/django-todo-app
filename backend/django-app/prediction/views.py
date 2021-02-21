@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.response import APIView
+from rest_framework.views import APIView
 from prediction.apps import PredictionConfig
 import pandas as pd
 # Create your views here.
