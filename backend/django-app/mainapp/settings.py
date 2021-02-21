@@ -25,7 +25,7 @@ SECRET_KEY = 'eeui@+hkszkt#r_pc9bb002ce-wz9k6qi4g1(wedwl(#y&k2tc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'prediction',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'users',
 ]
 
 MIDDLEWARE = [
